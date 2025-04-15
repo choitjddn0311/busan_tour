@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.jpg'
+import Logo from '../assets/logo.jpg';
 import {Header as MainHeader, HeaderInner, Logo as MainLogo, Nav, GnbContainer, Gnb} from "../styles/headerStyle"
 
 const Header = () => {
     return (
-        <MainHeader>
+        <>
+                <title>Busan Tour</title>
+            <MainHeader>
             <HeaderInner>
                 <MainLogo>
                     <Link to="/">
@@ -21,6 +23,7 @@ const Header = () => {
                 </Nav>
             </HeaderInner>
         </MainHeader>
+        </>
     )
 };
 

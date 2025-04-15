@@ -24,7 +24,7 @@ export const VideoContainer = styled.div `
 
     & > video {
         width: 100%;
-        filter:brightness(80%);
+        filter:brightness(60%);
     }
 `;
 
