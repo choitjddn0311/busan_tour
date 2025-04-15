@@ -13,7 +13,6 @@ export const Header = styled.header `
 export const HeaderInner = styled.div `
     width: var(--containerWidth);
     height: 80px;
-    box-shadow: 0 0 20px #aaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
