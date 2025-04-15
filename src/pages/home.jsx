@@ -1,8 +1,18 @@
+import Video from "../assets/main.mp4";
+import { Section, VisualContainer, VideoContainer, VisualTextContainer } from "../styles/homeStyle";
+
 const Home = () => (
-    <section>
-      <h2>어서오세요!</h2>
-      <p>이곳에서 여행 명소를 확인하고 나만의 일정을 만들어보세요.</p>
-    </section>
+    <Section>
+      <VisualContainer>
+        <VideoContainer>
+          <video src={Video} autoPlay loop muted />
+          <VisualTextContainer>
+            <h1>Welcome to <span>Busan</span></h1>
+            <p>you can do anything whatever you want in here</p>
+          </VisualTextContainer>
+        </VideoContainer>
+      </VisualContainer>
+    </Section>
   );
   
   export default Home;

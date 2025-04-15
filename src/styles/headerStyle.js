@@ -6,17 +6,20 @@ export const Header = styled.header `
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    z-index: 2;
 `;
 
 export const HeaderInner = styled.div `
     width: var(--containerWidth);
     height: 80px;
-    box-shadow: 0 0 20px #eee;
+    box-shadow: 0 0 20px #aaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 40px;
     padding: 0 40px;
+    background: #fff;
 `;
 
 export const Logo = styled.div `
