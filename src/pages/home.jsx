@@ -12,6 +12,7 @@ const Home = () => (
           </VisualTextContainer>
         </VideoContainer>
       </VisualContainer>
+      .
     </Section>
   );
   

@@ -19,6 +19,11 @@ export const HeaderInner = styled.div `
     border-radius: 40px;
     padding: 0 40px;
     background: #fff;
+
+    &.ScrollHeader {
+        box-shadow: 0 0 20px #eee,
+                    0 0 40px #eee;
+    }
 `;
 
 export const Logo = styled.div `
@@ -68,9 +73,9 @@ export const Gnb = styled.li `
         height: 0;
         bottom: 0;
         left: 0;
-        border-radius: 2px;
+        border-radius: 3px;
         background: var(--mainColor);
-        transition: .1s;
+        transition: .3s;
     }
 
     &:hover {
@@ -80,7 +85,7 @@ export const Gnb = styled.li `
     }
     
     &:hover::after {
-        height: 3px;
-        transition: .1s;
+        height: 5px;
+        transition: .3s;
     }
 `

@@ -1,13 +1,29 @@
 import { Link } from 'react-router-dom';
 import Logo from '../assets/logo.jpg';
 import {Header as MainHeader, HeaderInner, Logo as MainLogo, Nav, GnbContainer, Gnb} from "../styles/headerStyle"
+import { useEffect, useState } from 'react';
 
 const Header = () => {
+    const [isScroll,setIsScroll] = useState();
+    
+    useEffect(() => {
+        const scroll = () => {
+            setIsScroll(window.scrollY > window.innerHeight);
+        };
+
+        window.addEventListener('scroll' , scroll);
+
+        scroll();
+
+        return () => {
+            window.removeEventListener('scroll', scroll);
+        }
+    },[]);
     return (
         <>
-                <title>Busan Tour</title>
+            <title>Busan Tour</title>
             <MainHeader>
-            <HeaderInner>
+            <HeaderInner className={isScroll ? "ScrollHeader" : ""}>
                 <MainLogo>
                     <Link to="/">
                         <img src={Logo} alt="main Logo" />
