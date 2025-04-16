@@ -55,3 +55,19 @@ export const VisualTextContainer = styled.div `
         font-size: var(--mainFontSize);
     }
 `;
+
+export const AttractionContainer = styled.div `
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100vh;
+`;
+
+export const AttractionInner = styled.div `
+    width: var(--containerWidth);
+    height: 80vh;
+    background: red;
+`;

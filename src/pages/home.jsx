@@ -1,5 +1,5 @@
 import Video from "../assets/main.mp4";
-import { Section, VisualContainer, VideoContainer, VisualTextContainer } from "../styles/homeStyle";
+import { Section, VisualContainer, VideoContainer, VisualTextContainer, AttractionContainer, AttractionInner } from "../styles/homeStyle";
 
 const Home = () => (
     <Section>
@@ -12,7 +12,11 @@ const Home = () => (
           </VisualTextContainer>
         </VideoContainer>
       </VisualContainer>
-      .
+      <AttractionContainer>
+        <AttractionInner>
+
+        </AttractionInner>
+      </AttractionContainer>
     </Section>
   );
   

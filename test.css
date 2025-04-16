@@ -42,3 +42,16 @@ section {
     align-content: center;
     color: var(--mainColor);
 }
+.AttractionContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+.AttractionInner {
+    width: var(--containerWidth);
+    height: 100vh;
+    background: red;
+}
