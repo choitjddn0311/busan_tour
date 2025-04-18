@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter , Routes, Route } from 'react-router-dom';
 import GlobalStyle from './styles/globalStyle';
 import Home from './pages/home';
 import Attraction from './pages/attraction';
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <Router>
+      <BrowserRouter>
         <Header />
         <main>
           <Routes>
@@ -23,7 +23,7 @@ const App = () => {
           </Routes>
         </main>
         <Footer />
-      </Router>
+      </BrowserRouter>
     </>
   );
 };
