@@ -4,7 +4,7 @@ import {Header as MainHeader, HeaderInner, Logo as MainLogo, Nav, GnbContainer, 
 import { useEffect, useState } from 'react';
 
 const Header = () => {
-    const [isScroll,setIsScroll] = useState();
+    const [isScroll,setIsScroll] = useState(false);
     
     useEffect(() => {
         const scroll = () => {
@@ -44,6 +44,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-// 100vh => 즉 비쥬얼 영역아래로 슬라이드 하면 box-shadow -> 0 0 20px #aaa;

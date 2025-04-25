@@ -1,4 +1,11 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+
+const scrollHeaderStyle = css`
+    box-shadow: 0 0 20px #eee,
+                0 0 40px #eee;
+    justify-content: center;
+    width: 800px;
+`;
 
 export const Header = styled.header `
     width: 100%;
@@ -19,10 +26,10 @@ export const HeaderInner = styled.div `
     border-radius: 40px;
     padding: 0 40px;
     background: #fff;
+    transition: .3s;
 
     &.ScrollHeader {
-        box-shadow: 0 0 20px #eee,
-                    0 0 40px #eee;
+        ${scrollHeaderStyle}
     }
 `;
 
@@ -43,11 +50,18 @@ export const Logo = styled.div `
         width: 100%;
         height: 100%;
     }
+    .ScrollHeader & {
+        display: none;
+    }
 `;
 
 export const Nav = styled.nav `
     width: 50%;
     height: 100%;
+
+    .ScrollHeader & {
+        width: 100%;
+    }
 `;
 
 export const GnbContainer = styled.ul `
