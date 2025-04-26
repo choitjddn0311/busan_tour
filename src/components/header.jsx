@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <>
             <title>Busan Tour</title>
-            <MainHeader>
+            <MainHeader className={isScroll ? "ScrollHeader" : ""}>
             <HeaderInner className={isScroll ? "ScrollHeader" : ""}>
                 <MainLogo>
                     <Link to="/">
