@@ -1,10 +1,15 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+
+const flexCenter = css `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
 export const Section = styled.section `
     width: 100%;
-    height: 200vh;
-    display: flex;
-    justify-content: center;
+    height: 100vh;
+    ${flexCenter}
 `;
 
 export const VisualContainer = styled.div `
@@ -17,11 +22,9 @@ export const VisualContainer = styled.div `
 export const VideoContainer = styled.div `
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     object-fit: cover;
+    ${flexCenter}
 
     & > video {
         width: 100%;
@@ -39,11 +42,9 @@ export const VisualTextContainer = styled.div `
     text-align: center;
     align-content: center;
     color: #fff;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 20px;
-    align-item: center;
+    ${flexCenter}
 
     & > h1 {
         font-size: 100px;
