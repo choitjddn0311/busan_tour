@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Section, VisualContainer, VideoContainer, VisualTextContainer } from "../styles/homeStyle";
 import {AttractionContainer, CardContainer ,AttractionCard, CardImgContainer, CardTextContainer} from "../styles/AttractionStyle";
 import ModalMain from "../components/modal";
@@ -60,15 +61,21 @@ const Home = () => {
       </Section>
       <Section>
         <AttractionContainer>
-          <h1><span>Busan</span> Attraction</h1>
+          <h1><span>Busan</span> Attraction of this month</h1>
+          <Link to="/place"><p>want to know more attraction?</p></Link>
           <CardContainer>
             {cardData.map((card, i) => (
-              <AttractionCard key={i} onClick={() => openModal(card)}>
+              <AttractionCard key={i}>
                 <CardImgContainer>
                   {card.img && <img src={card.img} alt={card.subTitle}/>}
                 </CardImgContainer>
                 <CardTextContainer>
                   <h2>{card.title} <span>{card.subTitle}</span></h2>
+                  <ul>
+                    <li>Location:</li>
+                    <li>  </li>
+                  </ul>
+                  <button onClick={() => openModal(card)}>click me</button>
                 </CardTextContainer>
               </AttractionCard>
             ))}
