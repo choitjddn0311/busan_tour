@@ -29,7 +29,8 @@ export const CardContainer = styled.ul `
     export const AttractionCard = styled.li `
     width: 700px;
     height: 300px;
-    background: #eee;
+    background: #fff;
+    box-shadow: 0 0 20px #efefef;
     display: flex;
     border-radius: 10px;
     cursor: pointer;

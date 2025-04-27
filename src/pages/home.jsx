@@ -8,6 +8,7 @@ import Video from "../assets/main.mp4";
 import Img1 from "../assets/haeundae.jpg";
 import Img2 from "../assets/gamcheon_village.jpg";
 import Img3 from "../assets/haedong.jpg";
+import Img4 from "../assets/gukjae_market.jpeg";
 
 const Home = () => {
 
@@ -28,7 +29,7 @@ const Home = () => {
     {
       img: Img1, 
       title: "Busan", 
-      subTitle: "Haeundae"
+      subTitle: "Haeundae Beach"
     },
     {
       img: Img2,
@@ -41,9 +42,9 @@ const Home = () => {
       subTitle: "Haedong Yonggungsa Temple"
     },
     {
-      img: Img2,
+      img: Img4,
       title: "Busan", 
-      subTitle: "Gamcheon Village"
+      subTitle: "Gukjae Market"
     }
   ]
   return (
@@ -75,7 +76,7 @@ const Home = () => {
                     <li>Location:</li>
                     <li>  </li>
                   </ul>
-                  <button onClick={() => openModal(card)}>click me</button>
+                  <button onClick={() => openModal(card)}>More</button>
                 </CardTextContainer>
               </AttractionCard>
             ))}
