@@ -6,14 +6,25 @@ export const AttractionContainer = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+`
+
+export const AttractionTextContainer = styled.div `
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     & > h1 {
-        width: 100%;
-        height: 10vh;
         align-content: center;
     }
 
     & > h1 > span {
+        color: var(--mainColor);
+    }
+
+    & p {
+        text-decoration: underline;
         color: var(--mainColor);
     }
 `
