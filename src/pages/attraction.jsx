@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {AttractionSection, AttractionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer } from "../styles/AttractionStyle";
+import {LoadingContainer} from "../styles/loading";
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 
@@ -38,7 +39,15 @@ const Attraction = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) {
+    return (
+      <>
+        <LoadingContainer>
+          <div></div>
+        </LoadingContainer>
+      </>
+    )
+  }
   if (error) return <div>에러 발생!</div>;
   if (!data.length) return <div>데이터 없음</div>;
 
