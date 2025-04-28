@@ -1,8 +1,14 @@
-const Footer = () => (
-    <footer>
-      <p>© 2025 choitjddn0311. All rights reserved.</p>
-    </footer>
-  );
-  
-  export default Footer;
-  
+import { Link } from "react-router-dom";
+import { Footer as FooterMain } from "../styles/footerStyle";
+
+const Footer = () => {
+  return(
+    <>
+      <FooterMain>
+
+      </FooterMain>
+    </>
+  )
+}
+
+export default Footer;
