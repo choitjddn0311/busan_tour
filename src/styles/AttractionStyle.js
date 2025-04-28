@@ -1,5 +1,10 @@
 import styled, {css} from "styled-components";
 
+export const AttractionSection = styled.section `
+    width: 100%;
+    
+`
+
 export const AttractionContainer = styled.div `
     width: var(--containerWidth);
     height: 80vh;
