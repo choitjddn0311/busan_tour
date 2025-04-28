@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {AttractionSection, AttractionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
+import { Error404 } from '../styles/errorStyle';
+import E404 from "../assets/404error.png";
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 
@@ -9,6 +11,7 @@ const Attraction = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
 
   const fetchData = async () => {
     try {
@@ -21,7 +24,7 @@ const Attraction = () => {
           serviceKey: process.env.REACT_APP_API_KEY,
           numOfRows: 10,
           // select 박스로 5개씩보기 이런식으로로
-          pageNo: 5,
+          pageNo: page,
           // pageNo 최대 20
           resultType: 'json'
         }
@@ -36,9 +39,12 @@ const Attraction = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(page);
+  }, [page]);
 
+  const handleNextPage = () => {
+    setPage(prevPage => prevPage + 1)
+  }
   if (loading) {
     return (
       <>
@@ -48,7 +54,15 @@ const Attraction = () => {
       </>
     )
   }
-  if (error) return <div>에러 발생!</div>;
+  if (error) {
+    return (
+      <>
+        <Error404>
+          <img src={E404} alt="404" />
+        </Error404>
+      </>
+    )
+  };
   if (!data.length) return <div>데이터 없음</div>;
 
   return (
@@ -71,6 +85,7 @@ const Attraction = () => {
             </AttractionCard>
           ))}
         </CardContainer>
+      <button onClick={handleNextPage}>다음페이지</button>
       </AttractionContainer>
     </AttractionSection>
     </>

@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle `
     --containerWidth: 1440px;
     --mainColor: #7328A5;
     --subColor: #00BEFF;
-    --mainFontSize: 18px;
+    --mainFontSize: 20px;
     --midFontSize: 15px;
     --subFontSize: 13px;
     }
