@@ -1,8 +1,8 @@
 import styled, {css} from "styled-components";
 
 const scrollHeaderStyle = css`
-    box-shadow: 0 0 20px #eee,
-                0 0 40px #eee;
+    // box-shadow: 0 0 20px #eee,
+    //             0 0 40px #eee;
     justify-content: center;
     width: 800px;
 `;
@@ -15,6 +15,14 @@ export const Header = styled.header `
     align-items: center;
     position: fixed;
     z-index: 2;
+
+    &.ScrollHeader {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        background: #fff;
+    }
 `;
 
 export const HeaderInner = styled.div `
@@ -25,11 +33,13 @@ export const HeaderInner = styled.div `
     align-items: center;
     border-radius: 40px;
     padding: 0 40px;
-    background: #fff;
+    background: ${({isSpecialPage}) => (isSpecialPage ? '#fff' : 'transparent')};
+    box-shadow: ${({isSpecialPage}) => (isSpecialPage ? '0 0 20px #eee' : '')};
     transition: .3s;
 
     &.ScrollHeader {
         ${scrollHeaderStyle}
+        background: #fff;
     }
 `;
 
@@ -75,10 +85,14 @@ export const GnbContainer = styled.ul `
 export const Gnb = styled.li `
     height: 100%;
     align-content: center;
-    color: #111;
+    color: ${({isSpecialPage}) => (isSpecialPage ? '#111' : '#fff')};
     position: relative;
     transition: .3s;
     font-size: var(--mainFontSize);
+
+    .ScrollHeader & {
+        color: #111;
+    }
 
     &::after {
         content: '';
@@ -88,12 +102,12 @@ export const Gnb = styled.li `
         bottom: 0;
         left: 0;
         border-radius: 3px;
-        background: var(--mainColor);
+        background: var(--subColor);
         transition: .3s;
     }
 
     &:hover {
-        color: var(--mainColor);
+        color: var(--subColor);
         transition: .3s;
         cursor: pointer;
     }
@@ -101,5 +115,12 @@ export const Gnb = styled.li `
     &:hover::after {
         height: 5px;
         transition: .3s;
+    }
+
+    .ScrollHeader &::after {
+        background: var(--mainColor);
+    }
+    .ScrollHeader &:hover {
+        color: var(--mainColor);
     }
 `

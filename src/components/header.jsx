@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/logo.jpg';
 import {Header as MainHeader, HeaderInner, Logo as MainLogo, Nav, GnbContainer, Gnb} from "../styles/headerStyle"
 import { useEffect, useState } from 'react';
 
 const Header = () => {
     const [isScroll,setIsScroll] = useState(false);
+    const location = useLocation();
+
+    const isSpecialPage = ['/place' , '/food' , '/planner'].some(path => location.pathname === path || location.pathname.startsWith(`${path}/`));
     
     useEffect(() => {
         const scroll = () => {
@@ -23,7 +26,7 @@ const Header = () => {
         <>
             <title>Busan Tour</title>
             <MainHeader className={isScroll ? "ScrollHeader" : ""}>
-            <HeaderInner className={isScroll ? "ScrollHeader" : ""}>
+            <HeaderInner className={isScroll ? "ScrollHeader" : ""} isSpecialPage={isSpecialPage}>
                 <MainLogo>
                     <Link to="/">
                         <img src={Logo} alt="main Logo" />
@@ -31,10 +34,10 @@ const Header = () => {
                 </MainLogo>
                 <Nav>
                     <GnbContainer>
-                        <Gnb><Link to="/">home</Link></Gnb>
-                        <Gnb><Link to="/place">attraction</Link></Gnb>
-                        <Gnb><Link to="/food">food</Link></Gnb>
-                        <Gnb><Link to="/planner">planner</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/">home</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/place">attraction</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/food">food</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/planner">planner</Link></Gnb>
                     </GnbContainer>
                 </Nav>
             </HeaderInner>
