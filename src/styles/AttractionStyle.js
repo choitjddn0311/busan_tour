@@ -5,6 +5,8 @@ export const AttractionSection = styled.section `
     height: 200vh;
     display: flex;
     justify-content: center;
+    align-items: start;
+    padding-top: 50px;
 `
 
 export const AttractionContainer = styled.div `
@@ -43,7 +45,7 @@ export const CardContainer = styled.ul `
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    row-gap: 30px;
+    row-gap: 50px;
     `
     
     export const AttractionCard = styled.li `
