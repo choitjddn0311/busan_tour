@@ -1,4 +1,4 @@
-import {ModalContainer, Modal, ModalImgContainer, ModalTextContainer, ModalTextInner} from "../styles/modalStyle";
+import {ModalContainer, Modal} from "../styles/modalStyle";
 
 const ModalMain = ({onClose, children}) => {
     return(
