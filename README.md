@@ -1,3 +1,37 @@
+# 2025년 영어 수행평가 - 부산 투어 사이트
+## 구현 언어
+ - 리엑트⚛️, css
+## 구현기능
+- 공공데이터 포털 api (부산 명소 영어 ver. ) 사용
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
