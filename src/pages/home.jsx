@@ -69,7 +69,7 @@ const Home = () => {
         <AttractionContainer>
           <AttractionTextContainer>
             <h1><span>Busan</span> Attraction of this month</h1>
-            <Link to="/place"><p>want to know more attraction?</p></Link>
+            <Link to="/attraction"><p>want to know more attraction?</p></Link>
           </AttractionTextContainer>
           <CardContainer>
             {cardData.map((card, i) => (
