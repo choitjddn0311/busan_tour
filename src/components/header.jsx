@@ -7,7 +7,7 @@ const Header = () => {
     const [isScroll,setIsScroll] = useState(false);
     const location = useLocation();
 
-    const isSpecialPage = ['/place' , '/food' , '/planner'].some(path => location.pathname === path || location.pathname.startsWith(`${path}/`));
+    const isSpecialPage = ['/attraction' , '/food' , '/planner', '/planner_show'].some(path => location.pathname === path || location.pathname.startsWith(`${path}/`));
     
     useEffect(() => {
         const scroll = () => {
@@ -35,7 +35,7 @@ const Header = () => {
                 <Nav>
                     <GnbContainer>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/">home</Link></Gnb>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/place">attraction</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/attraction">attraction</Link></Gnb>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/food">food</Link></Gnb>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/planner">planner</Link></Gnb>
                     </GnbContainer>
