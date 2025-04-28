@@ -73,7 +73,8 @@ const Home = () => {
           </AttractionTextContainer>
           <CardContainer>
             {cardData.map((card, i) => (
-              <AttractionCard key={i}>
+              // 여기만 디자인 isSpecialpage
+              <AttractionCard key={i} >
                 <CardImgContainer>
                   {card.img && <img src={card.img} alt={card.subTitle}/>}
                 </CardImgContainer>
