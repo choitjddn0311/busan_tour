@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { AttractionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer } from "../styles/AttractionStyle";
+import {AttractionSection, AttractionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer } from "../styles/AttractionStyle";
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 
@@ -19,13 +19,14 @@ const Attraction = () => {
         params: {
           serviceKey: process.env.REACT_APP_API_KEY,
           numOfRows: 10,
-          pageNo: 1,
+          pageNo: 5,
+          // pageNo 최대 20
           resultType: 'json'
         }
       });
 
       console.log(response.data);
-      setData(response.data.getAttractionEn.item); // 바로 item만 저장!
+      setData(response.data.getAttractionEn.item);
     } catch (e) {
       setError(e);
     }
@@ -41,22 +42,28 @@ const Attraction = () => {
   if (!data.length) return <div>데이터 없음</div>;
 
   return (
-    <AttractionContainer>
-      <CardContainer>
-        {data.map((place) => (
-          <AttractionCard key={place.UC_SEQ}>
-            <CardImgContainer>
-              <img src={place.MAIN_IMG_NORMAL} alt={place.TITLE} style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-            </CardImgContainer>
-            <CardTextContainer>
-              <h3>{place.TITLE}</h3>
-              <p>{place.SUBTITLE}</p>
-              <p>{place.ADDR1}</p>
-            </CardTextContainer>
-          </AttractionCard>
-        ))}
-      </CardContainer>
-    </AttractionContainer>
+    <>
+    <AttractionSection>
+      <AttractionContainer>
+        <CardContainer>
+          {data.map((place) => (
+            <AttractionCard key={place.UC_SEQ}>
+              <CardImgContainer>
+                <img src={place.MAIN_IMG_NORMAL} alt={place.TITLE}/>
+              </CardImgContainer>
+              <CardTextContainer>
+                <h2>Busan <span>{place.PLACE}</span></h2>
+                <ul>
+                  <li className='location'>location: {place.ADDR1}</li>
+                  <li className='contact'>contact: {place.CNTCT_TEL}</li>
+                </ul>
+              </CardTextContainer>
+            </AttractionCard>
+          ))}
+        </CardContainer>
+      </AttractionContainer>
+    </AttractionSection>
+    </>
   );
 };
 

@@ -2,7 +2,9 @@ import styled, {css} from "styled-components";
 
 export const AttractionSection = styled.section `
     width: 100%;
-    
+    height: 200vh;
+    display: flex;
+    justify-content: center;
 `
 
 export const AttractionContainer = styled.div `
@@ -21,6 +23,7 @@ export const AttractionTextContainer = styled.div `
     align-items: center;
 
     & > h1 {
+        color: #111;
         align-content: center;
     }
 
@@ -30,7 +33,7 @@ export const AttractionTextContainer = styled.div `
 
     & p {
         text-decoration: underline;
-        color: var(--mainColor);
+        color: var(--subColor);
     }
 `
 export const CardContainer = styled.ul `
@@ -40,6 +43,7 @@ export const CardContainer = styled.ul `
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    row-gap: 30px;
     `
     
     export const AttractionCard = styled.li `
@@ -51,6 +55,11 @@ export const CardContainer = styled.ul `
     border-radius: 10px;
     cursor: pointer;
 
+    &:hover .location{
+        color: #222;
+        transition: .3s;
+    }
+
 `
 
 export const CardImgContainer = styled.div `
@@ -59,9 +68,12 @@ export const CardImgContainer = styled.div `
     overflow: hidden;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 
     & > img {
-        width: 100%;
         height: 100%;
     }
 `
@@ -73,11 +85,15 @@ export const CardTextContainer = styled.div  `
 
     & > h2 {
         width: 100%;
-        height: 75px;
+        height: 100px;
         text-align: end;
     }
     & > h2 > span {
         color: var(--mainColor);
+    }
+    & .location {
+        color: #aaa;
+        transition: .3s;
     }
 
 `

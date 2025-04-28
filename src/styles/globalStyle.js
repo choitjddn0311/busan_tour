@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle `
         font-family: 'KakaoBigSans-ExtraBold';
     }
     :root {
+    // 7328A5
     --containerWidth: 1440px;
     --mainColor: #7328A5;
     --subColor: #00BEFF;

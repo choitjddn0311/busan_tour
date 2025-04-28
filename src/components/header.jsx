@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <>
             <title>Busan Tour</title>
-            <MainHeader className={isScroll ? "ScrollHeader" : ""}>
+            <MainHeader className={isScroll ? "ScrollHeader" : ""} isSpecialPage={isSpecialPage}>
             <HeaderInner className={isScroll ? "ScrollHeader" : ""} isSpecialPage={isSpecialPage}>
                 <MainLogo>
                     <Link to="/">

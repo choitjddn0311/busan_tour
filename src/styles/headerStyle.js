@@ -1,8 +1,6 @@
 import styled, {css} from "styled-components";
 
 const scrollHeaderStyle = css`
-    // box-shadow: 0 0 20px #eee,
-    //             0 0 40px #eee;
     justify-content: center;
     width: 800px;
 `;
@@ -13,7 +11,7 @@ export const Header = styled.header `
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: ${({isSpecialPage}) => (isSpecialPage ? 'relative' : 'fixed')};
     z-index: 2;
 
     &.ScrollHeader {
