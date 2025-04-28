@@ -19,6 +19,7 @@ const Attraction = () => {
         params: {
           serviceKey: process.env.REACT_APP_API_KEY,
           numOfRows: 10,
+          // select 박스로 5개씩보기 이런식으로
           pageNo: 5,
           // pageNo 최대 20
           resultType: 'json'
