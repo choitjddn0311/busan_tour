@@ -1,8 +1,11 @@
 # 2025년 영어 수행평가 - 부산 투어 사이트
 ## 구현 언어
- - 리엑트⚛️, css
+ - 리엑트⚛️, JavaScript
 ## 구현기능
-- 공공데이터 포털 api (부산 명소 영어 ver. ) 사용
+- 공공데이터 포털 api [부산 명소 영문](https://www.data.go.kr/iim/api/selectAPIAcountView.do) 사용
+- 마크다운
+
+
 
 
 
