@@ -7,10 +7,12 @@ import FoodInfo from './pages/food';
 import Planner from './pages/planner';
 import Header from './components/header';
 import Footer from './components/footer';
+import Ai from './components/aiChat';
 
 const App = () => {
   return (
     <>
+    <Ai/>
       <GlobalStyle />
       <BrowserRouter>
         <Header />
