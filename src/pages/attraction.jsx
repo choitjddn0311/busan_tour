@@ -4,7 +4,7 @@ import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, Car
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
-import { Error404 } from '../styles/errorStyle';
+import { Error404, DataNot } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
@@ -83,7 +83,15 @@ const Attraction = () => {
       </>
     )
   };
-  if (!data.length) return <div>데이터 없음</div>;
+  if (!data.length) {
+    return (
+      <>
+        <DataNot>
+          <h2>The Data is NOT FOUND</h2>
+        </DataNot>
+      </>
+    )
+  };
 
   return (
     <>

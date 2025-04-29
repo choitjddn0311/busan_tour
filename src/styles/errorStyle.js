@@ -13,3 +13,15 @@ export const Error404 = styled.div `
         height: 20vh;
     }
 `
+export const DataNot = styled.div `
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+
+    & h2 {
+        color: var(--mainColor);
+    }
+`
