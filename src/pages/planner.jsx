@@ -1,23 +1,25 @@
 import { useState } from 'react';
+import MDEditor from '@uiw/react-md-editor';
+import { MarkdownContainer, MarkdownInner } from '../styles/plannerStyle';
 
-const Planner = () => {
-  const [plan, setPlan] = useState([]);
-
-  const addPlan = (newItem) => {
-    setPlan([...plan, newItem]);
-  };
-
+const Planner = (props) => {
+  const [value, setValue] = useState("**Write Planner with Mark down**");
+  
   return (
-    <section>
-      <h2>일정 만들기</h2>
-      <button onClick={() => addPlan('남산타워 방문')}>+ 일정 추가</button>
-      <ul>
-        {plan.map((item, idx) => (
-          <li key={idx}>{item}</li>
-        ))}
-      </ul>
-    </section>
-  );
+    <>
+    <markdownContainer>
+      <markdownInner>
+        <MDEditor
+          value={value}
+          onChange={setValue}
+          height={1000}
+          preview='edit'
+          className='customEditor'
+        /> 
+      </markdownInner>
+    </markdownContainer>
+    </>
+  )
 };
 
 export default Planner;
