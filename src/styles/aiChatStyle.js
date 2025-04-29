@@ -19,7 +19,7 @@ export const AiChat = styled.div `
     height: 50%;
     border-radius: 50%;
     background: #fff;
-    border: 1px outset var(--mainColor);
+    border: 5px solid var(--mainColor);
     overflow: hidden;
     object-fit: cover;
     ${setCenter}
@@ -27,6 +27,5 @@ export const AiChat = styled.div `
     & > img {
         width: 100%;
         height: 100%;
-
     }
 `
