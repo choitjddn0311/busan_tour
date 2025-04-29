@@ -22,7 +22,7 @@ export const Modal = styled.div `
 `;
 
 export const ModalImgContainer = styled.div `
-    width: 65%;
+    width: 45%;
     height: 100%;
     overflow: hidden;
     object-fit: cover;

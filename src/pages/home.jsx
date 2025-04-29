@@ -31,25 +31,28 @@ const Home = () => {
       title: "Busan", 
       subTitle: "Haeundae Beach",
       location: "Haeundae Beach, Haeundae-gu, Busan",
-      about: "test is test test is test test is test test is test test is test"
+      contact: "+82 51-749-5700"
     },
     {
       img: Img2,
       title: "Busan", 
       subTitle: "Gamcheon Village",
-      location: "203 Gamnae 2-ro, Saha-gu, Busan"
+      location: "203 Gamnae 2-ro, Saha-gu, Busan",
+      contact: "+82 51-204-1444"
     },
     {
       img: Img3,
       title: "Busan", 
       subTitle: "Haedong Yonggungsa Temple",
-      location: "86, Yonggung-gil, Gijang-eup, Gijang-gun, Busan"
+      location: "86, Yonggung-gil, Gijang-eup, Gijang-gun, Busan",
+      contact: "+82 51-722-7744"
     },
     {
       img: Img4,
       title: "Busan", 
       subTitle: "Gukjae Market",
-      location: "32, Junggu-ro, Jung-gu, Busan"
+      location: "32, Junggu-ro, Jung-gu, Busan",
+      contact: "+82 51-245-7389"
     }
   ]
   return (
@@ -73,18 +76,14 @@ const Home = () => {
           </AttractionTextContainer>
           <CardContainer>
             {cardData.map((card, i) => (
-              // 여기만 디자인 isSpecialpage
-              <AttractionCard key={i} >
+              <AttractionCard key={i} onClick={() => openModal(card)}>
                 <CardImgContainer>
                   {card.img && <img src={card.img} alt={card.subTitle}/>}
                 </CardImgContainer>
                 <CardTextContainer>
                   <h2>{card.title} <span>{card.subTitle}</span></h2>
-                  <ul>
-                    <li>Location: {card.location}</li>
-                    <li>  </li>
-                  </ul>
-                  <button onClick={() => openModal(card)}>More</button>
+                    <div className="location">Location: {card.location}</div>
+                    <div className="contact">contact: {card.contact}</div>
                 </CardTextContainer>
               </AttractionCard>
             ))}

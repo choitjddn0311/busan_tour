@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 export const AttractionSection = styled.section `
     width: 100%;
@@ -64,7 +64,9 @@ export const AttractionCard = styled.li `
     border-radius: 10px;
     cursor: pointer;
     transition: .3s;
-    &:hover .location{
+
+    &:hover .location,
+    &:hover .contact {
         color: #222;
         transition: .3s;
     }
@@ -94,18 +96,36 @@ export const CardTextContainer = styled.div  `
     width: 45%;
     height: 100%;
     padding: 20px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 20px;
 
     & > h2 {
         width: 100%;
-        height: 100px;
         text-align: end;
     }
     & > h2 > span {
         color: var(--mainColor);
     }
-    & .location {
+    & ul {
+        width: 100%;
+    }
+    & .contact {
         color: #aaa;
         transition: .3s;
+    }
+
+    & .location {
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+        color: #aaa;
+        transition: .3s;
+        text-overflow: ellipsis;
+        align-content: center;
     }
 
 `

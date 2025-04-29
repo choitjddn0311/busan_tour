@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageButtonContainer, PageButton } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
+import ModalMain from '../components/modal';
+import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
 import { Error404 } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
 
@@ -13,7 +15,19 @@ const Attraction = () => {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
   const numOfRows = 10;
+
+  const openModal = (card) => {
+    setIsModalOpen(true);
+    setSelectedCard(card);
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedCard(null);
+  }
 
   const fetchData = async () => {
     try {
@@ -25,9 +39,7 @@ const Attraction = () => {
         params: {
           serviceKey: process.env.REACT_APP_API_KEY,
           numOfRows: numOfRows,
-          // select 박스로 5개씩보기 이런식으로로
           pageNo: page,
-          // pageNo 최대 20
           resultType: 'json'
         }
       });
@@ -36,7 +48,6 @@ const Attraction = () => {
       setData(responseData.item || []);
       setTotalCount(responseData.totalCount || 0);
       console.log(response.data);
-      // setData(response.data.getAttractionEn.item);
     } catch (e) {
       setError(e);
     }
@@ -54,10 +65,6 @@ const Attraction = () => {
       setPage(pageNumber);
     }
   }
-
-  // const handleNextPage = () => {
-  //   setPage(prevPage => prevPage + 1)
-  // }
   if (loading) {
     return (
       <>
@@ -84,16 +91,14 @@ const Attraction = () => {
       <AsectionContainer>
         <CardContainer>
           {data.map((place) => (
-            <AttractionCard key={place.UC_SEQ}>
+            <AttractionCard key={place.UC_SEQ} onClick={() => openModal(place)}>
               <CardImgContainer>
                 <img src={place.MAIN_IMG_NORMAL} alt={place.TITLE}/>
               </CardImgContainer>
               <CardTextContainer>
                 <h2>Busan <span>{place.PLACE}</span></h2>
-                <ul>
-                  <li className='location'>location: {place.ADDR1}</li>
-                  <li className='contact'>contact: {place.CNTCT_TEL}</li>
-                </ul>
+                  <div className='location'>location: {place.ADDR1}</div>
+                  <div className='contact'>contact: {place.CNTCT_TEL}</div>
               </CardTextContainer>
             </AttractionCard>
           ))}
@@ -111,6 +116,20 @@ const Attraction = () => {
         </PageButtonContainer>
       </AsectionContainer>
     </AttractionSection>
+
+    {isModalOpen && selectedCard && (
+        <ModalMain onClose={closeModal}>
+          <ModalImgContainer>
+          {selectedCard.MAIN_IMG_NORMAL && <img src={selectedCard.MAIN_IMG_NORMAL} alt={selectedCard.PLACE}/>}
+          </ModalImgContainer>
+          <ModalTextContainer>
+            <ModalTextInner>
+              <h1>Busan <span>{selectedCard.PLACE}</span></h1>
+            {/* <p> 여기에 설명 추가 (location 잘렸으니 location도)</p> */}
+            </ModalTextInner>
+          </ModalTextContainer>
+        </ModalMain>
+      )}
     </>
   );
 };
