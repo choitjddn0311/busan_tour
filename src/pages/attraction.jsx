@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {AttractionSection, AttractionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer } from "../styles/AttractionStyle";
+import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageButtonContainer, PageButton } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import { Error404 } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
@@ -12,6 +12,8 @@ const Attraction = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(0);
+  const numOfRows = 10;
 
   const fetchData = async () => {
     try {
@@ -22,7 +24,7 @@ const Attraction = () => {
       const response = await axios.get(URL, {
         params: {
           serviceKey: process.env.REACT_APP_API_KEY,
-          numOfRows: 10,
+          numOfRows: numOfRows,
           // select 박스로 5개씩보기 이런식으로로
           pageNo: page,
           // pageNo 최대 20
@@ -30,8 +32,11 @@ const Attraction = () => {
         }
       });
 
+      const responseData = response.data.getAttractionEn;
+      setData(responseData.item || []);
+      setTotalCount(responseData.totalCount || 0);
       console.log(response.data);
-      setData(response.data.getAttractionEn.item);
+      // setData(response.data.getAttractionEn.item);
     } catch (e) {
       setError(e);
     }
@@ -42,9 +47,17 @@ const Attraction = () => {
     fetchData(page);
   }, [page]);
 
-  const handleNextPage = () => {
-    setPage(prevPage => prevPage + 1)
+  const totalPages = Math.ceil(totalCount / numOfRows);
+
+  const handlePageChange = (pageNumber) => {
+    if(pageNumber >= 1 && pageNumber <= totalPages) {
+      setPage(pageNumber);
+    }
   }
+
+  // const handleNextPage = () => {
+  //   setPage(prevPage => prevPage + 1)
+  // }
   if (loading) {
     return (
       <>
@@ -68,7 +81,7 @@ const Attraction = () => {
   return (
     <>
     <AttractionSection>
-      <AttractionContainer>
+      <AsectionContainer>
         <CardContainer>
           {data.map((place) => (
             <AttractionCard key={place.UC_SEQ}>
@@ -85,8 +98,18 @@ const Attraction = () => {
             </AttractionCard>
           ))}
         </CardContainer>
-      <button onClick={handleNextPage}>다음페이지</button>
-      </AttractionContainer>
+        <PageButtonContainer>
+          {Array.from({length: totalPages}, (_,index) => index + 1).map((pageNumber) => (
+            <PageButton 
+            key={pageNumber} 
+            onClick={() => handlePageChange(pageNumber)}
+            active={page === pageNumber}
+            >
+              {pageNumber}
+            </PageButton>
+          ))}
+        </PageButtonContainer>
+      </AsectionContainer>
     </AttractionSection>
     </>
   );
