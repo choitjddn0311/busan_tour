@@ -11,6 +11,7 @@ export const Error404 = styled.div `
     & img {
         width: 20%;
         height: 20vh;
+        display: flex;
     }
 `
 export const DataNot = styled.div `
