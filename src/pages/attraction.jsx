@@ -87,7 +87,7 @@ const Attraction = () => {
     return (
       <>
         <DataNot>
-          <h2>The Data is NOT FOUND in Page</h2>
+          <h2>The Data is NOT FOUND in Page!</h2>
         </DataNot>
       </>
     )
