@@ -134,7 +134,8 @@ export const PageButtonContainer = styled.div `
     width: 100%;
     height: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 15px;
     align-items: center;
 `
 
@@ -147,4 +148,18 @@ export const PageButton = styled.button `
     border-radius: 3px;
     cursor: pointer;
 
+`
+
+export const PageChangeButton = styled.button `
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: none;
+    color: var(--mainColor);
+    text-align: center;
+    align-content: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 `
