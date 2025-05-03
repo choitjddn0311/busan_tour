@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageButtonContainer, PageButton } from "../styles/AttractionStyle";
+import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageButtonContainer, PageButton, PageChangeButton } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
@@ -18,6 +18,7 @@ const Attraction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const numOfRows = 10;
+  const buttonGroup = 5;
 
   const openModal = (card) => {
     setIsModalOpen(true);
@@ -63,6 +64,23 @@ const Attraction = () => {
   const handlePageChange = (pageNumber) => {
     if(pageNumber >= 1 && pageNumber <= totalPages) {
       setPage(pageNumber);
+    }
+  }
+
+  const currentGroup = Math.ceil(page / buttonGroup);
+  const startPage = (currentGroup - 1) * buttonGroup + 1;
+  const endPage = Math.min(startPage + buttonGroup - 1, totalPages);
+  const pageNumbers = Array.from({length: endPage - startPage + 1}, (_,index) => startPage + index);
+
+  const handlePrev = () => {
+    if(startPage > 1) {
+      setPage(startPage - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if(endPage < totalPages) {
+      setPage(endPage + 1);
     }
   }
   if (loading) {
@@ -112,15 +130,22 @@ const Attraction = () => {
           ))}
         </CardContainer>
         <PageButtonContainer>
-          {Array.from({length: totalPages}, (_,index) => index + 1).map((pageNumber) => (
-            <PageButton 
-            key={pageNumber} 
-            onClick={() => handlePageChange(pageNumber)}
-            active={page === pageNumber}
+          {startPage > 1 && (
+            <PageChangeButton onClick={handlePrev}><i class="fa-solid fa-chevron-left"></i></PageChangeButton>
+          )}
+          {pageNumbers.map((pageNumber) => (
+            <PageButton
+              key={pageNumber}
+              onClick={() => handlePageChange(pageNumber)}
+              active={page === pageNumber}
             >
               {pageNumber}
             </PageButton>
           ))}
+          {endPage < totalPages && (
+            <PageChangeButton
+              onClick={handleNext}><i class="fa-solid fa-chevron-right"></i></PageChangeButton>
+          )}
         </PageButtonContainer>
       </AsectionContainer>
     </AttractionSection>
