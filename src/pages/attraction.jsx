@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageButtonContainer, PageButton, PageChangeButton } from "../styles/AttractionStyle";
+import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
@@ -57,6 +57,7 @@ const Attraction = () => {
 
   useEffect(() => {
     fetchData(page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   const totalPages = Math.ceil(totalCount / numOfRows);
