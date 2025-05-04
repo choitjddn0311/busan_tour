@@ -160,6 +160,6 @@ export const PageChangeButton = styled.button `
     align-content: center;
 
     &:hover {
-        cursor: pointer;
+        cursor: pointer;o   
     }
 `

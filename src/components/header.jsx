@@ -24,7 +24,7 @@ const Header = () => {
     },[]);
     return (
         <>
-            <title>Busan Tour</title>
+            <title>Busan | wonderful city</title>
             <MainHeader className={isScroll ? "ScrollHeader" : ""} isSpecialPage={isSpecialPage}>
             <HeaderInner className={isScroll ? "ScrollHeader" : ""} isSpecialPage={isSpecialPage}>
                 <MainLogo>
