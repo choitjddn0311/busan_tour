@@ -18,7 +18,7 @@ const Attraction = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null);
   const numOfRows = 10;
-  const buttonGroup = 5;
+  const buttonGroup = 5 //한 화면 버튼 개수;
 
   const openModal = (card) => {
     setIsModalOpen(true);
