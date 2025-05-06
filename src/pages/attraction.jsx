@@ -152,6 +152,7 @@ const Attraction = () => {
     </AttractionSection>
 
     {isModalOpen && selectedCard && (
+      // 모달
         <ModalMain onClose={closeModal}>
           <ModalImgContainer>
           {selectedCard.MAIN_IMG_NORMAL && <img src={selectedCard.MAIN_IMG_NORMAL} alt={selectedCard.PLACE}/>}
