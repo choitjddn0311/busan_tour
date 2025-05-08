@@ -104,6 +104,7 @@ export const CardTextContainer = styled.div  `
     & > h2 {
         width: 100%;
         text-align: end;
+        color: var(--subColor);
     }
     & > h2 > span {
         color: var(--mainColor);
@@ -135,7 +136,7 @@ export const PageButtonContainer = styled.div `
     height: 100px;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     align-items: center;
 `
 
@@ -153,13 +154,15 @@ export const PageButton = styled.button `
 export const PageChangeButton = styled.button `
     width: 50px;
     height: 50px;
+    font-size: 25px;
     background: #fff;
     border: none;
-    color: var(--mainColor);
+    color: #aaa;
     text-align: center;
     align-content: center;
 
     &:hover {
-        cursor: pointer;o   
+        cursor: pointer;
+        color: var(--mainColor);   
     }
 `

@@ -22,18 +22,18 @@ export const Modal = styled.div `
 `;
 
 export const ModalImgContainer = styled.div `
-    width: 45%;
-    height: 100%;
+    width: 50%;
     overflow: hidden;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 
     & > img {
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
     }
 `
 
@@ -48,6 +48,10 @@ export const ModalTextContainer = styled.div `
 export const ModalTextInner = styled.div `
     width: 100%;
     height: 90%;
+
+    & > h1 {
+        color: var(--subColor);
+    }
     
     & > h1 > span {
         color: var(--mainColor);
