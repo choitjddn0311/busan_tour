@@ -36,7 +36,7 @@ const Header = () => {
                     <GnbContainer>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/">home</Link></Gnb>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/attraction">attraction</Link></Gnb>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/food">food</Link></Gnb>
+                        <Gnb isSpecialPage={isSpecialPage}><Link to="/food">restaurant</Link></Gnb>
                         <Gnb isSpecialPage={isSpecialPage}><Link to="/planner">planner</Link></Gnb>
                     </GnbContainer>
                 </Nav>
