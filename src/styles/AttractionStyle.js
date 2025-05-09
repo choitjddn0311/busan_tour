@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AttractionSection = styled.section `
     width: 100%;
-    height: 200vh;
+    height: 220vh;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -42,7 +42,13 @@ export const AttractionTextContainer = styled.div `
 
     & p {
         text-decoration: underline;
-        color: var(--subColor);
+        color: #aaa;
+        transition: .3s;
+    }
+
+    & p:hover {
+        color: #111;
+        transition: .3s;
     }
 `
 export const CardContainer = styled.ul `
@@ -165,4 +171,22 @@ export const PageChangeButton = styled.button `
         cursor: pointer;
         color: var(--mainColor);   
     }
+`
+
+export const PageStyleCircle = styled.div `
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(0, 190, 255, 0.5);
+    position: absolute;
+    z-index: -1;
+`
+
+export const PageStyleCircle2 = styled.div `
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(115, 40, 165, 0.4);
+    position: absolute;
+    z-index: -1;
 `

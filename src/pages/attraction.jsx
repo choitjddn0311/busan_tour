@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton } from "../styles/AttractionStyle";
+import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton, PageStyleCircle } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
@@ -89,6 +89,7 @@ const Attraction = () => {
       <>
         <LoadingContainer>
           <div></div>
+          <h1>Loading...</h1>
         </LoadingContainer>
       </>
     )
