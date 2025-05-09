@@ -6,6 +6,8 @@ export const LoadingContainer = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 50px;
     background: #fff;
     position: fixed;
     top: 0;
@@ -18,6 +20,10 @@ export const LoadingContainer = styled.div `
         border-right-color: var(--mainColor);
         border-radius: 50%;
         animation: s 1s infinite linear;
+    }
+
+    & h1 {
+        color: var(--mainColor);
     }
     @keyframes s {
         to {
