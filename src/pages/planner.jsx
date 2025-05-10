@@ -13,7 +13,7 @@ const Planner = (props) => {
           value={value}
           onChange={setValue}
           height={1000}
-          preview='live'
+          preview='edit'
           className='customEditor'
         /> 
       </markdownInner>
