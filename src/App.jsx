@@ -9,6 +9,8 @@ import Header from './components/header';
 import Footer from './components/footer';
 import Ai from './components/aiChat';
 
+
+// 메인 페이지 불러오는 부분
 const App = () => {
   return (
     <>
