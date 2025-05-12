@@ -38,16 +38,17 @@ export const ModalImgContainer = styled.div `
 `
 
 export const ModalTextContainer = styled.div `
-    width: 35%;
+    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px
 `
 
 export const ModalTextInner = styled.div `
     width: 100%;
-    height: 90%;
+    height: 100%;
 
     & > h1 {
         color: var(--subColor);
@@ -55,5 +56,16 @@ export const ModalTextInner = styled.div `
     
     & > h1 > span {
         color: var(--mainColor);
+    }
+
+    & > div {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #555;
+        align-items: start;
+        gap: 20px;
     }
 `

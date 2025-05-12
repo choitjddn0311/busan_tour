@@ -81,26 +81,33 @@ const Food = () => {
 
   if (loading) {
     return (
-      <LoadingContainer>
-        <div></div>
-        <h1>Loading...</h1>
-      </LoadingContainer>
+      <>
+        <LoadingContainer>
+          <div></div>
+          <h1>Loading...</h1>
+        </LoadingContainer>
+      </>
     );
   }
 
   if (error) {
     return (
-      <Error404>
-        <img src={E404} alt="404" />
-      </Error404>
+      <>
+        <LoadingContainer>
+          <div></div>
+          <h1>Loading...</h1>
+        </LoadingContainer>
+      </>
     );
   }
 
   if (!data.length) {
     return (
-      <DataNot>
-        <h2>The Data is NOT FOUND in Page!</h2>
-      </DataNot>
+      <>
+        <Error404>
+          <img src={E404} alt="404" />
+        </Error404>
+      </>
     );
   }
 

@@ -6,6 +6,7 @@ import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
 import { Error404, DataNot } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
+import { selectLine } from '@uiw/react-md-editor';
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 
@@ -97,18 +98,19 @@ const Attraction = () => {
   if (error) {
     return (
       <>
-        <Error404>
-          <img src={E404} alt="404" />
-        </Error404>
+        <LoadingContainer>
+          <div></div>
+          <h1>Loading...</h1>
+        </LoadingContainer>
       </>
     )
   };
   if (!data.length) {
     return (
       <>
-        <DataNot>
-          <h2>The Data is NOT FOUND in Page!</h2>
-        </DataNot>
+        <Error404>
+          <img src={E404} alt="404" />
+        </Error404>
       </>
     )
   };
@@ -160,7 +162,16 @@ const Attraction = () => {
           <ModalTextContainer>
             <ModalTextInner>
               <h1>Busan <span>{selectedCard.PLACE}</span></h1>
-            {/* <p> 여기에 설명 추가 (location 잘렸으니 location도)</p> */}
+              <div>
+                <h3>{selectedCard.SUBTITLE}</h3>
+              </div>
+              <p>{selectedCard.HOMEPAGE_URL ? (
+                  <a href={selectedCard.HOMEPAGE_URL} target='_blank' rel='noopener noreferrer'>
+                    {selectedCard.HOMEPAGE_URL}
+                  </a>
+                ) : (
+                  <span>Can't found webpage</span>
+                )}</p>
             </ModalTextInner>
           </ModalTextContainer>
         </ModalMain>
