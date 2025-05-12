@@ -162,16 +162,6 @@ const Attraction = () => {
           <ModalTextContainer>
             <ModalTextInner>
               <h1>Busan <span>{selectedCard.PLACE}</span></h1>
-              <div>
-                <h3>{selectedCard.SUBTITLE}</h3>
-              </div>
-              <p>{selectedCard.HOMEPAGE_URL ? (
-                  <a href={selectedCard.HOMEPAGE_URL} target='_blank' rel='noopener noreferrer'>
-                    {selectedCard.HOMEPAGE_URL}
-                  </a>
-                ) : (
-                  <span>Can't found webpage</span>
-                )}</p>
             </ModalTextInner>
           </ModalTextContainer>
         </ModalMain>

@@ -127,6 +127,7 @@ const Food = () => {
                   <h2>{food.TITLE}</h2>
                   <p>{food.ITEMCNTNTS || "No representative menu available"}</p>
                 </FoodHoverCard>
+                {/* food click 카드드 */}
               </FoodCard>
             ))}
           </FoodCardContainer>
