@@ -122,7 +122,7 @@ const Food = () => {
               onMouseEnter={() => handleMouseEnter(i)}
               onMouseLeave={handleMouseLeave}
               >
-                <img src={food.MAIN_IMG_THUMB} alt={food.TITLE} />
+                <img src={food.MAIN_IMG_THUMB} alt={food.TITLE} title={food.TITLE} />
                 <FoodHoverCard active={hoverCard === i}>
                   <h2>{food.TITLE}</h2>
                   <p>{food.ITEMCNTNTS || "No representative menu available"}</p>
