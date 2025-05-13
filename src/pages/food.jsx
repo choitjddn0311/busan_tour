@@ -125,9 +125,9 @@ const Food = () => {
                 <img src={food.MAIN_IMG_THUMB} alt={food.TITLE} title={food.TITLE} />
                 <FoodHoverCard active={hoverCard === i}>
                   <h2>{food.TITLE}</h2>
-                  <p>{food.ITEMCNTNTS || "No representative menu available"}</p>
+                  <p>{food.ADDR1 || "No address in the data"}</p>
                 </FoodHoverCard>
-                {/* food click 카드드 */}
+                {/* food click 카드 */}
               </FoodCard>
             ))}
           </FoodCardContainer>

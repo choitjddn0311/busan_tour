@@ -121,4 +121,6 @@ export const Gnb = styled.li `
     .ScrollHeader &:hover {
         color: var(--mainColor);
     }
+    // active 스타일 -> 메인 / 경로때문에 home도 같이 먹음
+    
 `

@@ -22,6 +22,13 @@ const Header = () => {
             window.removeEventListener('scroll', scroll);
         }
     },[]);
+
+    const gnbItems = [
+        {name: "home", path: "/"},
+        {name: "attraction", path: "/attraction"},
+        {name: "restaurant", path: "/food"},
+        {name: "planner", path: "/planner"},
+    ]
     return (
         <>
             <title>Busan | wonderful city</title>
@@ -34,10 +41,14 @@ const Header = () => {
                 </MainLogo>
                 <Nav>
                     <GnbContainer>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/">home</Link></Gnb>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/attraction">attraction</Link></Gnb>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/food">restaurant</Link></Gnb>
-                        <Gnb isSpecialPage={isSpecialPage}><Link to="/planner">planner</Link></Gnb>
+                        {gnbItems.map(item => {
+                            const isActive = location.pathname == item.path || location.pathname.startsWith(`${item.path}`);
+                            return (
+                                <Gnb key={item.path} isSpecialPage={isSpecialPage} className={isActive ? "active" : ""}>
+                                    <Link to={item.path}>{item.name}</Link>
+                                </Gnb>
+                            )
+                        })}
                     </GnbContainer>
                 </Nav>
             </HeaderInner>
