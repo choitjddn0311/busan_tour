@@ -56,3 +56,9 @@ export const VisualTextContainer = styled.div `
         font-size: var(--mainFontSize);
     }
 `;
+
+export const ActivitiesContainer = styled.section `
+    width: var(--containerWidth);
+    height: 100%;
+    background: red;
+`

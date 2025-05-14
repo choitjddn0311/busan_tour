@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Section, VisualContainer, VideoContainer, VisualTextContainer } from "../styles/homeStyle";
+import { Section, VisualContainer, VideoContainer, VisualTextContainer,ActivitiesContainer } from "../styles/homeStyle";
 import {AttractionContainer, CardContainer ,AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageStyleCircle, PageStyleCircle2} from "../styles/AttractionStyle";
 import ModalMain from "../components/modal";
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from "../styles/modalStyle";
@@ -136,6 +136,11 @@ const Home = () => {
             ))}
           </FoodCardContainer>
         </FoodContainer>
+      </Section>
+      <Section>
+        <ActivitiesContainer>
+          
+        </ActivitiesContainer>
       </Section>
 
       {isModalOpen && selectedCard && (
