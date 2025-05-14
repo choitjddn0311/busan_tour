@@ -20,6 +20,7 @@ export const Header = styled.header `
         justify-content: end;
         align-items: center;
         background: #fff;
+        box-shadow: 0 0 30px #ddd;
     }
 `;
 

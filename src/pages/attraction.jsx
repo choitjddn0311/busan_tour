@@ -6,7 +6,8 @@ import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
 import { Error404, DataNot } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
-import { selectLine } from '@uiw/react-md-editor';
+import { FaAnglesRight } from "react-icons/fa6";
+import { FaAnglesLeft } from "react-icons/fa6";
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 
@@ -135,7 +136,7 @@ const Attraction = () => {
         </CardContainer>
         <PageButtonContainer>
           {startPage > 1 && (
-            <PageChangeButton onClick={handlePrev}><i class="fa-solid fa-chevron-left"></i></PageChangeButton>
+            <PageChangeButton onClick={handlePrev}><FaAnglesLeft/></PageChangeButton>
           )}
           {pageNumbers.map((pageNumber) => (
             <PageButton
@@ -148,7 +149,7 @@ const Attraction = () => {
           ))}
           {endPage < totalPages && (
             <PageChangeButton
-              onClick={handleNext}><i class="fa-solid fa-chevron-right"></i></PageChangeButton>
+              onClick={handleNext}><FaAnglesRight/></PageChangeButton>
           )}
         </PageButtonContainer>
       </AsectionContainer>

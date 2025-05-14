@@ -73,4 +73,44 @@ export const FoodHoverCard = styled.div `
         font-size: 16px;
     }
     
+`;
+
+export const FoodText = styled.div `
+    width: 710px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: var(--mainColor);
+    border-radius: 5px;
+    transition: .3s;
+
+    &:hover {
+        background: #fff;
+        transition: .3s;
+        cursor: pointer;
+    }
+
+    &:hover > h1 {
+        color: var(--subColor);
+    }
+
+    &:hover > h1 > span {
+        color: var(--mainColor);
+    }
+
+    & > h1 {
+        font-size: 40px;
+        color: #fff;
+    }
+
+    &:hover > p {
+        color: #111;
+    }
+    
+    & > p {
+        color: #fff;
+    }
 `

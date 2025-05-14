@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Section, VisualContainer, VideoContainer, VisualTextContainer,ActivitiesContainer } from "../styles/homeStyle";
+import { FaRegHandPointer } from "react-icons/fa";
+import { Section, VisualContainer, VideoContainer, VisualTextContainer,ActivitiesContainer, Activities, ActivitiesCard} from "../styles/homeStyle";
 import {AttractionContainer, CardContainer ,AttractionCard, CardImgContainer, CardTextContainer, AttractionTextContainer, PageStyleCircle, PageStyleCircle2} from "../styles/AttractionStyle";
 import ModalMain from "../components/modal";
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from "../styles/modalStyle";
-import { FoodContainer, FoodCardContainer, FoodCard, FoodHoverCard } from "../styles/foodStyle";
+import { FoodContainer, FoodCardContainer, FoodCard, FoodHoverCard, FoodText } from "../styles/foodStyle";
 import Video from "../assets/main.mp4";
 import Img1 from "../assets/haeundae.jpg";
 import Img2 from "../assets/gamcheon_village.jpg";
@@ -16,6 +17,10 @@ import Food3 from "../assets/food/fishCake.jpg";
 import Food4 from "../assets/food/gukbap.jpg";
 import Food5 from "../assets/food/multteok.jpg";
 import Food6 from "../assets/food/sashmi.jpg";
+import Activities1 from "../assets/walk.jpg";
+import Activities2 from "../assets/surfing.jpg";
+import Activities3 from "../assets/photo.jpg";
+
 
 
 const Home = () => {
@@ -81,6 +86,12 @@ const Home = () => {
     {img: Food5, name: "Multteok", about: "Skewered rice cakes simmered in spicy broth, unique to Busan's street food scene."},
     {img: Food6, name: "Sashimi", about: "Thinly sliced raw fish served fresh, often with soy sauce and wasabi."}
   ];
+
+  const ActivitiesDatas = [
+    {img: Activities1, text: 'walk along the coast and feeling busan'},
+    {img: Activities2, text: 'surfing in the busan busan beach'},
+    {img: Activities3, text: 'take a picture in the famous photo spot in busan'}
+  ]
   return (
     <>
       <Section>
@@ -121,12 +132,16 @@ const Home = () => {
       <Section>
         <FoodContainer>
           <FoodCardContainer>
+            <FoodText>
+              <h1><span>Special food</span> in Busan</h1>
+              <p>eat the food in Busan and feel and joy busan</p>
+            </FoodText>
             {FoodDatas.map((food, i) => (
               <FoodCard
-                key={i}
-                onMouseEnter={() => handleMouseEnter(i)}
-                onMouseLeave={handleMouseLeave}
-                >
+              key={i}
+              onMouseEnter={() => handleMouseEnter(i)}
+              onMouseLeave={handleMouseLeave}
+              >
                 <img src={food.img} alt={food.name} />
                 <FoodHoverCard active={hoverCard == i}>
                   <h2>{food.name}</h2>
@@ -139,7 +154,15 @@ const Home = () => {
       </Section>
       <Section>
         <ActivitiesContainer>
-          
+          <Activities>
+            {ActivitiesDatas.map((m,i) => (
+              <ActivitiesCard>
+                <img src={m.img} alt="" />
+                <h2>{m.text}</h2>
+                <p><FaRegHandPointer/></p>
+              </ActivitiesCard>
+            ))}
+          </Activities>
         </ActivitiesContainer>
       </Section>
 
