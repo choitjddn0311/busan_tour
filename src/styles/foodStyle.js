@@ -50,7 +50,7 @@ export const FoodHoverCard = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 20px;
     background: rgba(0,0,0,0.6);
     color: #fff;
     display: flex;
@@ -83,7 +83,7 @@ export const FoodText = styled.div `
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: var(--mainColor);
+    background: var(--subColor);
     border-radius: 5px;
     transition: .3s;
 

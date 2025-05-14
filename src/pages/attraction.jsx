@@ -3,7 +3,7 @@ import axios from 'axios';
 import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton, PageStyleCircle } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
-import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
+import { ModalImgContainer, ModalTextContainer, ModalTextInner,Textcontext } from '../styles/modalStyle';
 import { Error404, DataNot } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
 import { FaAnglesRight } from "react-icons/fa6";
@@ -124,7 +124,7 @@ const Attraction = () => {
           {data.map((place) => (
             <AttractionCard key={place.UC_SEQ} onClick={() => openModal(place)}>
               <CardImgContainer>
-                <img src={place.MAIN_IMG_NORMAL} alt={place.TITLE}/>
+                <img src={place.MAIN_IMG_THUMB} alt={place.TITLE}/>
               </CardImgContainer>
               <CardTextContainer>
                 <h2>Busan <span>{place.PLACE}</span></h2>
@@ -163,6 +163,13 @@ const Attraction = () => {
           <ModalTextContainer>
             <ModalTextInner>
               <h1>Busan <span>{selectedCard.PLACE}</span></h1>
+              <ul>
+                <li>Location: {selectedCard.TITLE}</li>
+                <li>Traffic information: {selectedCard.TRFC_INFO}</li>
+                <Textcontext>
+                  about: {selectedCard.ITEMCNTNTS}
+                </Textcontext>
+              </ul>
             </ModalTextInner>
           </ModalTextContainer>
         </ModalMain>

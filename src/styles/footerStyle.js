@@ -6,44 +6,47 @@ export const Footer = styled.footer `
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: #111;
     position: relative;
     z-index: 5;
 `
 export const FooterInner = styled.div `
-    width: 1700px;
+    width: var(--containerWidth);
     height: 150px;
     display: flex;
     justify-content: space-between;
 `
 
 export const FooterLogo = styled.div `
-    width: 13%;
+    width: 15%;
     height: 100%;
     display: flex;
     align-items: center;
     
     & > img {
         width: 100%;
+        -webkit-filter: brightness(0) invert(1); 
+        filter: brightness(0) invert(1);
     }
 `
 
 export const FooterRight = styled.div `
     width: 85%;
     height: 100%;
+    color: #fff;
 `
-
-export const RightTop = styled.div `
+    
+    export const RightTop = styled.div `
     width: 100%;
     height: 30%;
     display: flex;
     justify-content: end;
     align-items: center;
     gap: 20px;
-    color: #111;
+    color: #fff;
 `
-
-export const RightMid = styled.div `
+    
+    export const RightMid = styled.div `
     width: 100%;
     height: 30%;
     display: flex;
@@ -51,7 +54,6 @@ export const RightMid = styled.div `
     align-items: center;
     gap: 30px;
     font-size: 20px;
-    color: #111;
 `
 
 export const RightBottom = styled.div `

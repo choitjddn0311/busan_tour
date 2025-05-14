@@ -58,14 +58,29 @@ export const ModalTextInner = styled.div `
         color: var(--mainColor);
     }
 
-    & > div {
-        width: 100%;
-        height: 10%;
+    // & > div {
+    //     width: 100%;
+    //     height: 10%;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     color: #555;
+    //     align-items: start;
+    //     gap: 20px;
+    // }
+
+    & > ul {
+        width: 100%:
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        color: #555;
-        align-items: start;
-        gap: 20px;
+        gap: 30px;
+        padding: 10px;
     }
+`
+
+export const Textcontext = styled.li `
+    width: 100%;
+    overflow-y: scroll;
 `
