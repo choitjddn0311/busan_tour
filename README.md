@@ -3,10 +3,8 @@
  - 리엑트⚛️, JavaScript
 ## 구현기능
 - 공공데이터 포털 api [부산 명소 영문](https://www.data.go.kr/iim/api/selectAPIAcountView.do) 사용
+- [api 관련](https://velog.io/@choitjddn0311/react-open-api)
 - 마크다운
-
-![스크린샷 2025-04-29 174735](https://github.com/user-attachments/assets/9dc13517-1f4b-4672-9a81-2be76ce22a7c)
-
 
 
 
