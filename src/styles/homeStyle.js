@@ -56,3 +56,81 @@ export const VisualTextContainer = styled.div `
         font-size: var(--mainFontSize);
     }
 `;
+
+export const ActivitiesContainer = styled.section `
+    width: var(--containerWidth);
+    height: 100%;
+    display: flex;
+    align-items: center;
+`
+
+export const Activities = styled.div `
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+`
+
+export const ActivitiesCard = styled.div `
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+
+    & > img {
+        width: 100%;
+        height: 250%;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    & > h2 {
+        position: absolute;
+        color: #fff;
+        transition: .3s;
+        visibility: visible;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,190,255,0.7);
+        transition: .3s;
+        }
+        
+    &:hover > h2 {
+        visibility: hidden;
+        transition: .1s;
+    }
+        
+    &:hover::before {
+        background: transparent;
+        transition: .3s;
+    }
+    
+    & > p {
+        position: absolute;
+        bottom: 20%;
+        font-size: 30px;
+        color: #fff;
+        transition: .1s;
+        visibility: visible;
+    }
+        
+    &:hover > p {
+        visibility: hidden;
+        transition: .1s;
+    }
+
+`

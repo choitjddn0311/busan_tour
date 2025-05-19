@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { FaAnglesRight } from "react-icons/fa6";
+import { FaAnglesLeft } from "react-icons/fa6";
 import { LoadingContainer } from '../styles/loading';
 import { Error404 } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
@@ -135,7 +137,7 @@ const Food = () => {
         <PageButtonContainer>
             {startPage > 1 && (
               <PageChangeButton onClick={handlePrev}>
-                <i className="fa-solid fa-chevron-left"></i>
+                <FaAnglesLeft/>
               </PageChangeButton>
             )}
             {pageNumbers.map((pageNum) => (
@@ -149,7 +151,7 @@ const Food = () => {
             ))}
             {endPage < totalPages && (
               <PageChangeButton onClick={handleNext}>
-                <i className="fa-solid fa-chevron-right"></i>
+                <FaAnglesRight/>
               </PageChangeButton>
             )}
         </PageButtonContainer>

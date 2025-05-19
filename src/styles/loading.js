@@ -11,7 +11,7 @@ export const LoadingContainer = styled.div `
     background: #fff;
     position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 6;
 
     & div {
         width: 100px;
