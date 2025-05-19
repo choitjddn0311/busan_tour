@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton, PageStyleCircle } from "../styles/AttractionStyle";
+import {AttractionSection, AsectionContainer, CardContainer, AttractionCard, CardImgContainer, CardTextContainer, PageButtonContainer, PageButton, PageChangeButton } from "../styles/AttractionStyle";
 import {LoadingContainer} from "../styles/loading";
 import ModalMain from '../components/modal';
 import { ModalImgContainer, ModalTextContainer, ModalTextInner } from '../styles/modalStyle';
-import { Error404, DataNot } from '../styles/errorStyle';
+import { Error404 } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
-import { selectLine } from '@uiw/react-md-editor';
 
 const URL = "https://apis.data.go.kr/6260000/AttractionService/getAttractionEn";
 

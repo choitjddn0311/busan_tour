@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Img from "../assets/ai3.png";
 import { AiChatContainer, AiChat } from "../styles/aiChatStyle";
 

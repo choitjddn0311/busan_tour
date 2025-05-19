@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { LoadingContainer } from '../styles/loading';
-import { Error404, DataNot } from '../styles/errorStyle';
+import { Error404 } from '../styles/errorStyle';
 import E404 from "../assets/404error.png";
 import { FoodSection, FoodContainer, FoodCardContainer, FoodCard, FoodHoverCard } from '../styles/foodStyle';
 import { PageButtonContainer, PageButton, PageChangeButton } from '../styles/AttractionStyle';

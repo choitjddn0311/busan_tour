@@ -128,7 +128,7 @@ const Home = () => {
                 onMouseLeave={handleMouseLeave}
                 >
                 <img src={food.img} alt={food.name} />
-                <FoodHoverCard active={hoverCard == i}>
+                <FoodHoverCard active={hoverCard === i}>
                   <h2>{food.name}</h2>
                   <p>{food.about}</p>
                 </FoodHoverCard>

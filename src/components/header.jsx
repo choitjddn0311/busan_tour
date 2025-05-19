@@ -42,7 +42,7 @@ const Header = () => {
                 <Nav>
                     <GnbContainer>
                         {gnbItems.map(item => {
-                            const isActive = location.pathname == item.path || location.pathname.startsWith(`${item.path}`);
+                            const isActive = location.pathname === item.path || location.pathname.startsWith(`${item.path}`);
                             return (
                                 <Gnb key={item.path} isSpecialPage={isSpecialPage} className={isActive ? "active" : ""}>
                                     <Link to={item.path}>{item.name}</Link>
