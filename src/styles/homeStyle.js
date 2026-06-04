@@ -10,6 +10,11 @@ export const Section = styled.section `
     width: 100%;
     height: 100vh;
     ${flexCenter}
+
+    @media (max-width: 768px) {
+        height: auto;
+        min-height: 100vh;
+    }
 `;
 
 export const VisualContainer = styled.div `
@@ -55,6 +60,16 @@ export const VisualTextContainer = styled.div `
     & > p {
         font-size: var(--mainFontSize);
     }
+
+    @media (max-width: 1024px) {
+        width: 70%;
+        & > h1 { font-size: 70px; }
+    }
+    @media (max-width: 768px) {
+        width: 90%;
+        & > h1 { font-size: 45px; }
+        & > p { font-size: 13px; }
+    }
 `;
 
 export const ActivitiesContainer = styled.section `
@@ -62,6 +77,12 @@ export const ActivitiesContainer = styled.section `
     height: 100%;
     display: flex;
     align-items: center;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        padding: 20px 0;
+        height: auto;
+    }
 `
 
 export const Activities = styled.div `
@@ -87,6 +108,10 @@ export const ActivitiesCard = styled.div `
     & > img {
         width: 100%;
         height: 250%;
+    }
+
+    @media (max-width: 768px) {
+        height: 200px;
     }
 
     &:hover {

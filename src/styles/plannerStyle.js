@@ -5,6 +5,11 @@ export const MarkdownContainer = styled.div `
     height: 125vh;
     display: flex;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 80px 0 30px;
+    }
 `
 
 export const MarkdownMain = styled.div `
@@ -14,10 +19,15 @@ export const MarkdownMain = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        gap: 15px;
+    }
 `
 
 export const PlannerTitle = styled.div `
-    width: var(--containerWidth);
+    width: 100%;
     height: 15vh;
     display: flex;
     flex-direction: column;
@@ -47,7 +57,7 @@ export const PlannerTitle = styled.div `
 `
 
 export const PlannerSubmitArea = styled.div `
-    width: var(--containerWidth);
+    width: 100%;
     height:10vh;
     display: flex;
     justify-content: end;

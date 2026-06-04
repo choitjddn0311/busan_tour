@@ -8,12 +8,21 @@ export const FoodSection = styled.section `
     justify-content: space-between;
     padding-top: 50px;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 80px 0 50px;
+    }
 `
 export const FoodContainer = styled.div `
     width: var(--containerWidth);
     display: flex;
     justify-content: center;
     align-items: start;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
 `
 
 export const FoodCardContainer = styled.div `
@@ -27,7 +36,7 @@ export const FoodCardContainer = styled.div `
 `
 
 export const FoodCard = styled.div `
-    width: 350px;
+    width: calc(25% - 8px);
     height: 350px;
     overflow: hidden;
     object-fit: cover;
@@ -41,6 +50,13 @@ export const FoodCard = styled.div `
     & > img {
         height: 100%;
         border-radius: inherit;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        flex: none;
+        height: 250px;
+        & > img { width: 100%; object-fit: cover; }
     }
 `
 
@@ -76,7 +92,7 @@ export const FoodHoverCard = styled.div `
 `;
 
 export const FoodText = styled.div `
-    width: 710px;
+    width: calc(50% - 5px);
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -86,6 +102,12 @@ export const FoodText = styled.div `
     background: var(--subColor);
     border-radius: 5px;
     transition: .3s;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 200px;
+        & > h1 { font-size: 28px; }
+    }
 
     &:hover {
         background: #fff;

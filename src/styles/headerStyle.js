@@ -22,6 +22,10 @@ export const Header = styled.header `
         background: #fff;
         box-shadow: 0 0 30px #ddd;
     }
+
+    @media (max-width: 768px) {
+        height: 70px;
+    }
 `;
 
 export const HeaderInner = styled.div `
@@ -39,6 +43,12 @@ export const HeaderInner = styled.div `
     &.ScrollHeader {
         ${scrollHeaderStyle}
         background: #fff;
+    }
+
+    @media (max-width: 768px) {
+        height: 60px;
+        padding: 0 15px;
+        border-radius: 0;
     }
 `;
 
@@ -62,6 +72,10 @@ export const Logo = styled.div `
     .ScrollHeader & {
         display: none;
     }
+
+    @media (max-width: 768px) {
+        width: 100px;
+    }
 `;
 
 export const Nav = styled.nav `
@@ -70,6 +84,10 @@ export const Nav = styled.nav `
 
     .ScrollHeader & {
         width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        width: 70%;
     }
 `;
 
@@ -88,6 +106,10 @@ export const Gnb = styled.li `
     position: relative;
     transition: .3s;
     font-size: var(--mainFontSize);
+
+    @media (max-width: 768px) {
+        font-size: 13px;
+    }
 
     .ScrollHeader & {
         color: #111;

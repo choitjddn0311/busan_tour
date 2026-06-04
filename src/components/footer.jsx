@@ -1,6 +1,5 @@
-import { Footer as FooterMain } from "../styles/footerStyle";
-import { Link } from "react-router-dom";
 import { Footer as FooterMain, FooterInner,FooterLogo, FooterRight,RightTop, RightMid,RightBottom } from "../styles/footerStyle";
+import { Link } from "react-router-dom";
 import Logo from "../assets/logo.jpg";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";

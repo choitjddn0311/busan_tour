@@ -7,6 +7,12 @@ export const AttractionSection = styled.section `
     justify-content: center;
     align-items: start;
     padding-top: 50px;
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding-top: 80px;
+        padding-bottom: 50px;
+    }
 `
 
 export const AttractionContainer = styled.div `
@@ -14,6 +20,10 @@ export const AttractionContainer = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        width: 95%;
+    }
 `
 
 export const AsectionContainer = styled.div `
@@ -22,6 +32,11 @@ export const AsectionContainer = styled.div `
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        gap: 30px;
+    }
 `
 
 export const AttractionTextContainer = styled.div `
@@ -62,7 +77,7 @@ export const CardContainer = styled.ul `
 
     
 export const AttractionCard = styled.li `
-    width: 700px;
+    width: 48%;
     height: 300px;
     background: #fff;
     box-shadow: 0 0 20px #efefef;
@@ -80,6 +95,15 @@ export const AttractionCard = styled.li `
         box-shadow: 0 0 30px #ccc;
         transition: .3s;
     }
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
 `
 
 export const CardImgContainer = styled.div `
@@ -96,6 +120,13 @@ export const CardImgContainer = styled.div `
     & > img {
         height: 100%;
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 200px;
+        border-radius: 10px 10px 0 0;
+        & > img { width: 100%; height: 100%; object-fit: cover; }
+    }
 `
 
 export const CardTextContainer = styled.div  `
@@ -106,6 +137,11 @@ export const CardTextContainer = styled.div  `
     flex-direction: column;
     justify-content: start;
     gap: 20px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 15px;
+    }
 
     & > h2 {
         width: 100%;

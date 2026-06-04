@@ -19,6 +19,13 @@ export const Modal = styled.div `
     background: #fff;
     border-radius: 10px;
     display: flex;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        flex-direction: column;
+        height: 90vh;
+        overflow-y: auto;
+    }
 `;
 
 export const ModalImgContainer = styled.div `
@@ -35,6 +42,13 @@ export const ModalImgContainer = styled.div `
         width: 100%;
         height: 100%;
     }
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px 10px 0 0;
+        & > img { object-fit: cover; }
+    }
 `
 
 export const ModalTextContainer = styled.div `
@@ -43,7 +57,12 @@ export const ModalTextContainer = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        height: auto;
+    }
 `
 
 export const ModalTextInner = styled.div `

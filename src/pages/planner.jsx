@@ -1,12 +1,11 @@
 
-import { Editor } from '@toast-ui/react-editor';
-import '@toast-ui/editor/toastui-editor.css';
-import 'tui-color-picker/dist/tui-color-picker.css';
-import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';
+import { useState } from 'react';
+import MDEditor from '@uiw/react-md-editor';
 import { MarkdownContainer, MarkdownMain, PlannerTitle, PlannerSubmitArea} from '../styles/plannerStyle';
 
 const Planner = (props) => {
-  
+  const [value, setValue] = useState('');
+
   return (
     <>
       <MarkdownContainer>
@@ -15,19 +14,12 @@ const Planner = (props) => {
             <h1>planner title</h1>
             <input type="text" name="" id="" placeholder='Enter the planner title'/>
           </PlannerTitle>
-          <Editor
-            hideModeSwitch
-            previewStyle={window.innerWidth > 1000 ? 'vertical' : 'tab'}
-            initialEditType="markdown"
-            placeholder="write your travel planner here"
+          <MDEditor
+            value={value}
+            onChange={setValue}
             height="90vh"
-            toolbarItems={[ ['heading','bold', 'italic', 'strike'],
-                            ['hr'],
-                            ['image', 'link'],
-                            ['ul', 'ol', 'table'],
-                            // ['code', 'codeblock'], 코드 필요없음
-            ]}
-    />
+            preview="live"
+          />
           <PlannerSubmitArea>
             <input type="submit" value="save plan"/>
           </PlannerSubmitArea>

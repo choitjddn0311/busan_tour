@@ -15,12 +15,19 @@ const GlobalStyle = createGlobalStyle `
     }
     :root {
     // 7328A5
-    --containerWidth: 1440px;
+    --containerWidth: 80%;
     --mainColor: #7328A5;
     --subColor: #00BEFF;
     --mainFontSize: 20px;
     --midFontSize: 15px;
     --subFontSize: 13px;
+    }
+    @media (max-width: 768px) {
+        :root {
+            --mainFontSize: 14px;
+            --midFontSize: 12px;
+            --subFontSize: 11px;
+        }
     }
     li {
         list-style: none;
